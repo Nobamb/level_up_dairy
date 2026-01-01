@@ -8,89 +8,94 @@
   <!-- css 가져오기 -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- 구조 생성 -->
-  <aside id="sideScreen">
-    <!-- 프로필 영역 -->
-    <div id="profile">
-      <!-- 유저 정보 영역 -->
-      <div id="userInformation">
-        <!-- 프로필 사진 -->
-        <div id="profilePicture"></div>
-        <!-- 닉네임 -->
-        <p id="nickname"></p>
-      </div>
-      <!-- 유저 레벨 영역 -->
-      <div id="userLevel">
-        <!-- 레벨 -->
-        <p id="level">
-      </div>
-      <!-- 경험치바 -->
-      <div id="expBar">
-        <!-- 현재 경험치바 -->
-        <div id="nowExpBar"></div>
-      </div>
-      <!-- 전체 경험치수치 -->
-      <p id="allExp"></p>
-      <!-- 경험치 구분 -->
-      <span id="expDivise">/</span>
-      <!-- 누적 경험치수치 -->
-      <p id="accumulateExp"></p>
-    </div>
-    <!-- 일기 작성, 검색, 리스트 모음 -->
-    <div id="diaryUtil">
-      <!-- 일기작성버튼 -->
-      <button id="writeDiary">일기 작성하기!</button>
-      <!-- 검색창 영역 -->
-      <div id="search">
-        <!-- 검색창 입력 영역 -->
-        <div id="searchBox">
-          <input type="text" id="searchInput">
-          <button id="searchButton">검색</button>
+  <!-- 전체구조-->
+  <div id="fullStructure">
+    <aside id="sideScreen">
+      <!-- 프로필 영역 -->
+      <div id="profile">
+        <!-- 유저 정보 영역 -->
+        <div id="userInformation">
+          <!-- 프로필 사진 -->
+          <div id="profilePicture"></div>
+          <!-- 닉네임 -->
+          <p id="nickname"></p>
         </div>
+        <!-- 유저 레벨 영역 -->
+        <div id="userLevel">
+          <!-- 레벨 -->
+          <p id="level">
+        </div>
+        <!-- 경험치바 -->
+        <div id="expBar">
+          <!-- 현재 경험치바 -->
+          <div id="nowExpBar"></div>
+        </div>
+        <!-- 전체 경험치수치 -->
+        <p id="allExp"></p>
+        <!-- 경험치 구분 -->
+        <span id="expDivise">/</span>
+        <!-- 누적 경험치수치 -->
+        <p id="accumulateExp"></p>
       </div>
-      <!-- 일기 리스트 -->
-      <ul id="diaryList">
-        <!-- 추후 자바스크립트에 의한 li 태그 추가로 -->
-        <!-- ul에 일기 목록들 채워볼 예정 -->
-      </ul>
+      <!-- 일기 작성, 검색, 리스트 모음 -->
+      <div id="diaryUtil">
+        <!-- 일기작성버튼 -->
+        <button id="writeDiary">일기 작성하기!</button>
+        <!-- 검색창 영역 -->
+        <div id="search">
+          <!-- 검색창 입력 영역 -->
+          <div id="searchBox">
+            <input type="text" id="searchInput">
+            <button id="searchButton">검색</button>
+          </div>
+        </div>
+        <!-- 일기 리스트 -->
+        <ul id="diaryList">
+          <!-- 추후 자바스크립트에 의한 li 태그 추가로 -->
+          <!-- ul에 일기 목록들 채워볼 예정 -->
+        </ul>
+      </div>
+    </aside>
+    <!-- 메인 화면 -->
+    <div id="mainScreen">
+      <!-- 헤더(제목) -->
+      <header id="mainHeader">
+        <!-- 수정 중일 땐 input이 on/ h1이 off -->
+        <!-- 일기 작성 완료하면 h1이 on/ input이 off -->
+        <!-- on/off 상태에 따라 제목이 나오거나 나오지 않음 -->
+        <!-- on상태일 때 등장 -->
+        <!-- off상태일 땐 미등장 -->
+        <input type="text" id="inputTitle" class="off">
+        <h1 id="title" class="on"></h1>
+        <!-- 날짜 -->
+        <p id="nowDate"></p>
+        <!-- button 3형제 -->
+        <!-- 수정, 삭제, 저장 -->
+        <!-- 작성이 완료된 글은 수정, 삭제만 -->
+        <!-- 작성중인 글은 저장만 -->
+        <div id="settingButtons">
+          <button id="saveButton">저장</button>
+          <button id="updateButton">수정</button>
+          <button id="deleteButton">삭제</button>
+        </div>
+      </header>
+      <!-- 메인화면 내용 -->
+      <main id="mainContext">
+        <!-- 수정 중일 땐 input이 on/ p가 off -->
+        <!-- 일기 작성 완료하면 p가 on/ input이 off -->
+        <!-- on/off 상태에 따라 내용이 나오거나 나오지 않음 -->
+        <!-- on상태일 때 등장 -->
+        <!-- off상태일 땐 미등장 -->
+        <input type="text" id="inputContext" class="off">
+        <p id="inputContext" class="on"></p>
+      </main>
     </div>
-  </aside>
-  <!-- 메인 화면 -->
-  <div id="mainScreen">
-    <!-- 헤더(제목) -->
-    <header id="mainHeader">
-      <!-- 수정 중일 땐 input이 on/ h1이 off -->
-      <!-- 일기 작성 완료하면 h1이 on/ input이 off -->
-      <!-- on/off 상태에 따라 제목이 나오거나 나오지 않음 -->
-      <!-- on상태일 때 등장 -->
-      <!-- off상태일 땐 미등장 -->
-      <input type="text" id="inputTitle" class="off">
-      <h1 id="title" class="on"></h1>
-      <!-- 날짜 -->
-      <p id="nowDate"></p>
-      <!-- button 3형제 -->
-      <!-- 수정, 삭제, 저장 -->
-      <!-- 작성이 완료된 글은 수정, 삭제만 -->
-      <!-- 작성중인 글은 저장만 -->
-      <div id="settingButtons">
-        <button id="saveButton">저장</button>
-        <button id="updateButton">수정</button>
-        <button id="deleteButton">삭제</button>
-      </div>
-    </header>
-    <!-- 메인화면 내용 -->
-    <main id="mainContext">
-      <!-- 수정 중일 땐 input이 on/ p가 off -->
-      <!-- 일기 작성 완료하면 p가 on/ input이 off -->
-      <!-- on/off 상태에 따라 내용이 나오거나 나오지 않음 -->
-      <!-- on상태일 때 등장 -->
-      <!-- off상태일 땐 미등장 -->
-      <input type="text" id="inputContext" class="off">
-      <p id="inputContext" class="on"></p>
-    </main>
   </div>
 </body>
 <!-- 자바스크립트 가져오기 -->
 <script src="main.js"></script>
+
 </html>
