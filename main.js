@@ -1,3 +1,8 @@
+// 레벨 관련 import
+import Level from "./class/Level";
+// 레벨 요소 관련 import 
+import LevelElements from "./class/LevelElements";
+
 // 테스트
 // console.log("!")
 
@@ -19,27 +24,27 @@
 // level.innerHTML = levelValue;
 // // 다름 레벨로 진화하기 위한 요구 경험치량
 // expBar.innerHTML = levelExpMaxValue * levelValue
-// 클래스화
-// 레벨 값 관련
-class Level {
+// // 클래스화
+// // 레벨 값 관련
+// class Level {
 
-  constructor(levelValue, levelMaxValue) {
-    // 현재 레벨
-    this.levelValue = levelValue;
-    this.levelExpMaxValue = levelMaxValue
-  }
+//   constructor(levelValue, levelMaxValue) {
+//     // 현재 레벨
+//     this.levelValue = levelValue;
+//     this.levelExpMaxValue = levelMaxValue
+//   }
 
-}
-// 레벨 요소 관련
-class LevelElements {
+// }
+// // 레벨 요소 관련
+// class LevelElements {
 
-  constructor(level, allExp, accumulateExp) {
-    this.level = level;
-    this.allExp = allExp;
-    this.accumulateExp = accumulateExp
-  }
+//   constructor(level, allExp, accumulateExp) {
+//     this.level = level;
+//     this.allExp = allExp;
+//     this.accumulateExp = accumulateExp
+//   }
 
-}
+// }
 // level, levelElements 생성자 생성
 const level = new Level(1, 100)
 const levelElements = new LevelElements(document.getElementById("level"), document.getElementById("allExp"), document.getElementById("accumulateExp"))
