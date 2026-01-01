@@ -44,3 +44,19 @@ ul {
   background-color: blue;
 
 }
+
+
+/* on/off 지정 */
+
+/* off는 display none */
+/* on은 display inline-block */
+
+.on{
+
+  display: inline-block;
+
+}
+
+.off{
+  display: none;
+}
