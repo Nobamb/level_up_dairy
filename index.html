@@ -58,9 +58,35 @@
   <!-- 메인 화면 -->
   <div id="mainScreen">
     <!-- 헤더(제목) -->
-    <header id="mainHeader"></header>
+    <header id="mainHeader">
+      <!-- 수정 중일 땐 input이 on/ h1이 off -->
+      <!-- 일기 작성 완료하면 h1이 on/ input이 off -->
+      <!-- on/off 상태에 따라 제목이 나오거나 나오지 않음 -->
+      <!-- on상태일 때 등장 -->
+      <!-- off상태일 땐 미등장 -->
+      <input type="text" id="inputTitle" class="off">
+      <h1 id="title" class="on"></h1>
+      <!-- 날짜 -->
+      <p id="nowDate"></p>
+      <!-- button 3형제 -->
+      <!-- 수정, 삭제, 저장 -->
+      <!-- 작성이 완료된 글은 수정, 삭제만 -->
+      <!-- 작성중인 글은 저장만 -->
+      <div id="settingButtons">
+        <button id="saveButton">저장</button>
+        <button id="updateButton">수정</button>
+        <button id="deleteButton">삭제</button>
+      </div>
+    </header>
     <!-- 메인화면 내용 -->
     <main id="mainContext">
+      <!-- 수정 중일 땐 input이 on/ p가 off -->
+      <!-- 일기 작성 완료하면 p가 on/ input이 off -->
+      <!-- on/off 상태에 따라 내용이 나오거나 나오지 않음 -->
+      <!-- on상태일 때 등장 -->
+      <!-- off상태일 땐 미등장 -->
+      <input type="text" id="inputContext" class="off">
+      <p id="inputContext" class="on"></p>
     </main>
   </div>
 </body>
