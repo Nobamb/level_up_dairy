@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* 전체적용(margin 0 padding 0 box-sizing border) */
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ul list style 적용 x */
+ul {
+
+  list-style: none;
+
+}
+
+/* fullStructure flex설정 */
+/* flex 지정 목적 및 화면 가득 채우도록 */
+#fullStructure{
+
+  width : 100%;
+  height: 100vh;
+  display: flex;
+
+}
+
+/* sideScreen 영역 설정 가로 30% */
+
+#sideScreen {
+
+  width: 30%;
+  height: 100%;
+  /* 영역 적용 확인용 */
+  background-color: red;
+
+}
+
+#mainScreen {
+
+  width: 70%;
+  height: 100%;
+  /* 영역 적용 확인용 */
+  background-color: blue;
+
+}
