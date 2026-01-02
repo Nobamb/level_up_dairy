@@ -1,4 +1,7 @@
 // 날짜에 대해 요소를 통해 포매팅되어 보여주는 함수
+
+import DateFormat from "../class/DateFormat.js";
+// 0~9일 때 앞에 0을 더 붙임
 import formatZero from "./formatZero.js";
 
 // 첫번째 파라미터 : 보여줄 요소의 위치
@@ -11,15 +14,26 @@ const dateShow = (dateElement, dateValue) => {
   // date 클래스를 가져오기(현재 날짜를 가져옴)
   const date = dateValue;
   // 년, 월, 일까지만
+
+  // class화
+  const dateFormat = new DateFormat(
+    // 년
+    date.getFullYear(),
+    // 월(0부터 시작해서 1더함)
+    date.getMonth() + 1,
+    // 일
+    date.getDate()
+  );
+
   // 년
-  const year = date.getFullYear();
+  // const year = date.getFullYear();
   // 월(0부터 시작해서 1더함)
-  const month = date.getMonth() + 1;
+  // const month = date.getMonth() + 1;
   // 일
-  const day = date.getDay();
+  // const day = date.getDay();
   // 만약, month, day가 0~9일때,
   // 앞에 0을 더 붙임
-  const formatZeroData = formatZero([month, day]);
+  const formatZeroData = formatZero([dateFormat.month, dateFormat.day]);
   // if(month < 10){
   //   month = "0" + String(month)
   // }
@@ -30,7 +44,7 @@ const dateShow = (dateElement, dateValue) => {
   // nowDate 요소에 년,월,일 기재
   // formatZeroData[0] = month
   // formatZeroData[1] = day
-  nowDate.innerHTML = `${year}-${formatZeroData[0]}-${formatZeroData[1]}`;
+  nowDate.innerHTML = `${dateFormat.year}-${formatZeroData[0]}-${formatZeroData[1]}`;
 };
 
 // export
