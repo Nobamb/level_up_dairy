@@ -13,6 +13,7 @@ import diaryWriteElementData from "./data/diaryWriteElementData.js";
 import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderElementData.js";
 // mainContext 관련 요소 데이터
 import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
+import settingButtons from "../mainScreen/settingButtons/data/buttonsElementsData.js";
 
 // 일기 작성 버튼 관련 이벤트 동작 함수
 // 일기 작성 버튼을 클릭시, 오른쪽의 메인화면에
@@ -33,6 +34,8 @@ const diaryWrite = () => {
   // 일기작성 버튼 writeDiaryButton 클릭시,
   // mainContext, mainHeader가 on이 되면서
   // 제목과 내용에 대해 작성을 할 수 있음
+  // 저장버튼 saveButton 활성화
+  // 수정, 삭제버튼 updateButton, deleteButton 비활성화
   clickOnOff(
     diaryWriteElementData.writeDiaryButton,
     [
@@ -40,12 +43,18 @@ const diaryWrite = () => {
       mainContextElementData.mainContext,
       mainHeaderElementData.inputTitle,
       mainContextElementData.inputContext,
+      settingButtons.saveButton,
     ],
-    [mainHeaderElementData.title, mainContextElementData.diaryContext]
+    [
+      mainHeaderElementData.title,
+      mainContextElementData.diaryContext,
+      settingButtons.updateButton,
+      settingButtons.deleteButton,
+    ]
   );
 
   // date를 요소에 띄우기
-  dateShow(document.getElementById("nowDate") ,new Date())
+  dateShow(document.getElementById("nowDate"), new Date());
 
   // // 메인 화면의 일기의 날짜요소(nowDate)를 오늘 날짜로
   // // 하루에 한번 일기를 작성할 것이기 때문
