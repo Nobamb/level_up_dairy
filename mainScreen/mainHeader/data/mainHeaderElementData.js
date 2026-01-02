@@ -9,7 +9,10 @@ const mainHeaderElementData = {
   inputTitle : document.getElementById("inputTitle"),
 
   // title 가져오기
-  title : document.getElementById("title")
+  title : document.getElementById("title"),
+
+  // nowDate 가져오기
+  nowDate : document.getElementById("nowDate"),
 
 }
 
