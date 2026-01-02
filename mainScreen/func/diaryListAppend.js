@@ -19,7 +19,22 @@ const diaryListAppend = (titleValue, contextValue) => {
   const maxDiaryIndex = diaryListData.length - 1;
   // 테스트
   // 최근 작성한 데이터의 제목, 내용이 나오는지
-  console.log(diaryListData[maxDiaryIndex])
+  console.log(diaryListData[maxDiaryIndex]);
+
+  // diaryList에 li로 값들 추가
+  // diaryList에 li로 title이랑 context내용 추가
+  const diaryList = document.getElementById("diaryList");
+  // insertAdjectHTML 적용해보기
+  // diaryList에 적용
+  // li태그 추가
+  // 내용은 diaryListData의 마지막 값(최신값)
+  // 추가 위치는 diaryList의 내부 제일 첫번째 위치
+  // begin의 after 위치
+  diaryList.insertAdjacentHTML("afterbegin",
+    `<li>
+      <h2>${diaryListData[maxDiaryIndex].title}</h2>
+      <p>${diaryListData[maxDiaryIndex].context}</p>
+    </li>`)
 };
 
-export default diaryListAppend
+export default diaryListAppend;
