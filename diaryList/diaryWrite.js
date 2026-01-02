@@ -1,6 +1,10 @@
 // 클릭시 on/off변환 함수
 
 import clickOnOff from "../func/clickOnOff.js";
+
+// 요소에 날짜를 띄우는 함수
+import dateShow from "../func/dateShow.js";
+
 // 데이터 가져오기
 
 // diary 작성 관련 요소 데이터
@@ -40,30 +44,33 @@ const diaryWrite = () => {
     [mainHeaderElementData.title, mainContextElementData.diaryContext]
   );
 
-  // 메인 화면의 일기의 날짜요소(nowDate)를 오늘 날짜로
-  // 하루에 한번 일기를 작성할 것이기 때문
-  // 날짜요소 가져오기
-  const nowDate = document.getElementById("nowDate");
-  // date 클래스를 가져오기(현재 날짜를 가져옴)
-  const date = new Date();
-  // 년, 월, 일까지만
-  // 년
-  const year = date.getFullYear();
-  // 월(0부터 시작해서 1더함)
-  let month = date.getMonth()+1;
-  // 일
-  let day = date.getDay();
-  // 만약, month, day가 0~9일때,
-  // 앞에 0을 더 붙임
-  if(month < 10){
-    month = "0" + String(month)
-  }
-  if(day < 10){
-    day = "0" + String(day)
-  }
+  // date를 요소에 띄우기
+  dateShow(document.getElementById("nowDate") ,new Date())
 
-  // nowDate 요소에 년,월,일 기재
-  nowDate.innerHTML = `${year}-${month}-${day}`
+  // // 메인 화면의 일기의 날짜요소(nowDate)를 오늘 날짜로
+  // // 하루에 한번 일기를 작성할 것이기 때문
+  // // 날짜요소 가져오기
+  // const nowDate = document.getElementById("nowDate");
+  // // date 클래스를 가져오기(현재 날짜를 가져옴)
+  // const date = new Date();
+  // // 년, 월, 일까지만
+  // // 년
+  // const year = date.getFullYear();
+  // // 월(0부터 시작해서 1더함)
+  // let month = date.getMonth()+1;
+  // // 일
+  // let day = date.getDay();
+  // // 만약, month, day가 0~9일때,
+  // // 앞에 0을 더 붙임
+  // if(month < 10){
+  //   month = "0" + String(month)
+  // }
+  // if(day < 10){
+  //   day = "0" + String(day)
+  // }
+
+  // // nowDate 요소에 년,월,일 기재
+  // nowDate.innerHTML = `${year}-${month}-${day}`
 
   // // writeDiaryButton 가져오기
   // const writeDiaryButton = document.getElementById("writeDiaryButton");
