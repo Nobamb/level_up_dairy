@@ -60,3 +60,12 @@ ul {
 .off{
   display: none;
 }
+
+
+
+/* diaryList의 li들 커서가 지정되게 */
+#diaryList > li{
+
+  cursor: pointer;
+
+}
