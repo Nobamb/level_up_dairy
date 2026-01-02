@@ -15,8 +15,6 @@ const elementsValueInsert = (inserteds, values) => {
     inserted.innerHTML = values[index]
   });
 
-  return inserteds
-
 }
 
 
