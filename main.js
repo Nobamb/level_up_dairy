@@ -5,6 +5,8 @@ import levelPreference from "./level/levelPreference.js";
 import diaryWrite from "./diaryList/diaryWrite.js";
 // 일기 저장
 import diarySave from "./mainScreen/diarySave.js";
+// 일기 리스트 가져오기
+import diaryGet from "./diaryList/diaryGet.js";
 
 // 테스트
 // console.log("!")
@@ -71,3 +73,6 @@ levelPreference()
 diaryWrite()
 // 일기 작성 후 저장
 diarySave()
+// 일기리스트 클릭시 해당 리스트의 제목과 내용을 불러옴
+diaryGet()
+
