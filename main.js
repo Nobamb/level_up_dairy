@@ -1,5 +1,8 @@
 // 레벨 관련 환경설정 가져오기
 import levelPreference from "./level/levelPreference.js";
+// 일기 리스트 관련 데이터 추가
+
+
 // 테스트
 // console.log("!")
 
