@@ -33,7 +33,18 @@ const diaryWrite = () => {
     mainContext.classList.add("on");
     // off 클래스 삭제
     mainContext.classList.remove("off");
-    
+    // inputTitle, inputContext on 클래스추가
+    // off 클래스 삭제
+    inputTitle.classList.add("on")
+    inputTitle.classList.remove("off")
+    inputContext.classList.add("on")
+    inputContext.classList.remove("off")
+    // title, diaryContext off 클래스 추가
+    // on 클래스 삭제
+    title.classList.add("off")
+    title.classList.remove("on")
+    diaryContext.classList.add("off")
+    diaryContext.classList.remove("on")
   };
 };
 
