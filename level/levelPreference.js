@@ -1,5 +1,6 @@
+// 값을 요소에 삽입하는 함수
+import elementsValueInsert from "../func/elementsValueInsert.js";
 // 레벨 데이터 관련 import
-import valueInsert from "../func/valueInsert.js";
 import levelData from "./data/levelData.js";
 // 레벨 요소 데이터 관련 import
 import levelElementsData from "./data/levelElementsData.js";
@@ -18,11 +19,11 @@ const levelPreference = () => {
   // 값 대입
   // 첫번째 파라미터 = html 요소들
   // 두번째 파라미터 = 요소들에 대입될 값들
-  valueInsert(
+  elementsValueInsert(
     [
-      levelElementsData.level.innerHTML,
-      levelElementsData.allExp.innerHTML,
-      levelElementsData.accumulateExp.innerHTML,
+      levelElementsData.level,
+      levelElementsData.allExp,
+      levelElementsData.accumulateExp,
     ],
     [
       levelData.level,
