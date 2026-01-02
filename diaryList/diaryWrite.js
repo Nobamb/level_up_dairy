@@ -15,6 +15,28 @@ import mainContextElementData from "../mainScreen/mainContext/data/mainContextEl
 
 // 일기 작성관련 창이 뜸
 const diaryWrite = () => {
+  // 만약에 오늘 날짜로 이미 일기를 작성했을 경우,
+  // 일기를 더 작성하지 못하게 함(하루에 한번)
+  // 즉, 오늘 처음 작성할 때만 clickonoff가 적용되게
+  // if(){
+    // if문 구현 성공시 clickonoff 넣기
+  // }
+  // else{
+  //   이미 일기를 작성했을 경우
+  //   내일 일기를 작성하라고 안내만 띄우기
+  //   alert("오늘 이미 일기를 작성했습니다. 내일 다시 와주세요")
+  // }
+  clickOnOff(
+    diaryWriteElementData.writeDiaryButton,
+    [
+      mainHeaderElementData.mainHeader,
+      mainContextElementData.mainContext,
+      mainHeaderElementData.inputTitle,
+      mainContextElementData.inputContext,
+    ],
+    [mainHeaderElementData.title, mainContextElementData.diaryContext]
+  );
+  
   // 일기작성 버튼 writeDiaryButton 클릭시,
   // mainContext, mainHeader가 on이 되면서
   // 제목과 내용에 대해 작성을 할 수 있음
@@ -45,16 +67,6 @@ const diaryWrite = () => {
   // 두번째 파라미터 : mainHeader, mainContext, inputTitle, inputContext(on 적용)
   // 세번째 파라미터 : title, diaryContext(off 적용)
 
-  clickOnOff(
-    diaryWriteElementData.writeDiaryButton,
-    [
-      mainHeaderElementData.mainHeader,
-      mainContextElementData.mainContext,
-      mainHeaderElementData.inputTitle,
-      mainContextElementData.inputContext,
-    ],
-    [mainHeaderElementData.title, mainContextElementData.diaryContext]
-  );
 
   //   // writeDiary 클릭시 이벤트 발생
   //   writeDiaryButton.onclick = () => {
