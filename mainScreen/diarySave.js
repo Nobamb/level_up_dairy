@@ -8,8 +8,6 @@
 // saveButton off,
 // updateButton, deleteButton on
 
-import Diary from "../diaryList/class/Diary.js";
-import diaryListData from "../diaryList/data/diaryListData.js";
 import onOff from "../func/onOff.js";
 import diaryListAppend from "./func/diaryListAppend.js";
 import mainContextElementData from "./mainContext/data/mainContextElementData.js";
