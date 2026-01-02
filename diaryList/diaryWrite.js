@@ -19,13 +19,16 @@ const diaryWrite = () => {
   // 일기를 더 작성하지 못하게 함(하루에 한번)
   // 즉, 오늘 처음 작성할 때만 clickonoff가 적용되게
   // if(){
-    // if문 구현 성공시 clickonoff 넣기
+  // if문 구현 성공시 clickonoff 넣기
   // }
   // else{
   //   이미 일기를 작성했을 경우
   //   내일 일기를 작성하라고 안내만 띄우기
   //   alert("오늘 이미 일기를 작성했습니다. 내일 다시 와주세요")
   // }
+  // 일기작성 버튼 writeDiaryButton 클릭시,
+  // mainContext, mainHeader가 on이 되면서
+  // 제목과 내용에 대해 작성을 할 수 있음
   clickOnOff(
     diaryWriteElementData.writeDiaryButton,
     [
@@ -36,10 +39,32 @@ const diaryWrite = () => {
     ],
     [mainHeaderElementData.title, mainContextElementData.diaryContext]
   );
-  
-  // 일기작성 버튼 writeDiaryButton 클릭시,
-  // mainContext, mainHeader가 on이 되면서
-  // 제목과 내용에 대해 작성을 할 수 있음
+
+  // 메인 화면의 일기의 날짜요소(nowDate)를 오늘 날짜로
+  // 하루에 한번 일기를 작성할 것이기 때문
+  // 날짜요소 가져오기
+  const nowDate = document.getElementById("nowDate");
+  // date 클래스를 가져오기(현재 날짜를 가져옴)
+  const date = new Date();
+  // 년, 월, 일까지만
+  // 년
+  const year = date.getFullYear();
+  // 월(0부터 시작해서 1더함)
+  let month = date.getMonth()+1;
+  // 일
+  let day = date.getDay();
+  // 만약, month, day가 0~9일때,
+  // 앞에 0을 더 붙임
+  if(month < 10){
+    month = "0" + String(month)
+  }
+  if(day < 10){
+    day = "0" + String(day)
+  }
+
+  // nowDate 요소에 년,월,일 기재
+  nowDate.innerHTML = `${year}-${month}-${day}`
+
   // // writeDiaryButton 가져오기
   // const writeDiaryButton = document.getElementById("writeDiaryButton");
   // // mainContext 가져오기
@@ -66,7 +91,6 @@ const diaryWrite = () => {
   // 첫번째 파라미터 : writeDiaryButton(클릭 버튼)
   // 두번째 파라미터 : mainHeader, mainContext, inputTitle, inputContext(on 적용)
   // 세번째 파라미터 : title, diaryContext(off 적용)
-
 
   //   // writeDiary 클릭시 이벤트 발생
   //   writeDiaryButton.onclick = () => {
