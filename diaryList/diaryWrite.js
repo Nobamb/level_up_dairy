@@ -54,7 +54,7 @@ const diaryWrite = () => {
   );
 
   // date를 요소에 띄우기
-  dateShow(document.getElementById("nowDate"), new Date());
+  dateShow(mainHeaderElementData.nowDate, new Date());
 
   // // 메인 화면의 일기의 날짜요소(nowDate)를 오늘 날짜로
   // // 하루에 한번 일기를 작성할 것이기 때문
