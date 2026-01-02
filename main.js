@@ -3,6 +3,7 @@ import levelPreference from "./level/levelPreference.js";
 // 일기 리스트 관련 데이터 추가
 // 일기 작성
 import diaryWrite from "./diaryList/diaryWrite.js";
+// 일기 저장
 import diarySave from "./mainScreen/diarySave.js";
 
 // 테스트
