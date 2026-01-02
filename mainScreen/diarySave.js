@@ -29,9 +29,11 @@ const diarySave = () => {
     const titleValue = mainHeaderElementData.inputTitle.value
     // 내용 값
     const contextValue = mainContextElementData.inputContext.value
+    // 날짜 값
+    const dateValue = mainHeaderElementData.nowDate.innerHTML
     // 일기 추가
     diaryListAppend(
-      titleValue, contextValue
+      titleValue, contextValue, dateValue
     );
 
 
