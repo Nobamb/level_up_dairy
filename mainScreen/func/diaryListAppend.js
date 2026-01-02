@@ -8,10 +8,11 @@ import diaryListData from "../../diaryList/data/diaryListData.js";
 // diaryListData에 추가
 // 제목 titleValue
 // 내용 contextValue
-const diaryListAppend = (titleValue, contextValue) => {
+// 날짜 date
+const diaryListAppend = (titleValue, contextValue, date) => {
   // 새로 저장한 일기를 리스트에 추가
-  // 제목과 내용이 각각 들어감
-  const diary = new Diary(titleValue, contextValue);
+  // 제목과 내용, 날짜가 각각 들어감
+  const diary = new Diary(titleValue, contextValue, date);
   // diarylist 전체 데이터에 값 push
   diaryListData.push(diary);
 
@@ -33,6 +34,7 @@ const diaryListAppend = (titleValue, contextValue) => {
   diaryList.insertAdjacentHTML("afterbegin",
     `<li>
       <h2>${diaryListData[maxDiaryIndex].title}</h2>
+      <span>${diaryListData[maxDiaryIndex].date}</span>
       <p>${diaryListData[maxDiaryIndex].context}</p>
     </li>`)
 };
