@@ -1,7 +1,8 @@
 // 레벨 관련 환경설정 가져오기
 import levelPreference from "./level/levelPreference.js";
 // 일기 리스트 관련 데이터 추가
-
+// 일기 작성
+import diaryWrite from "./diaryList/diaryWrite.js";
 
 // 테스트
 // console.log("!")
@@ -64,3 +65,5 @@ import levelPreference from "./level/levelPreference.js";
 // // 추후 서버로 변경
 // 레벨 환경설정 가져오기
 levelPreference()
+// 일기 작성
+diaryWrite()
