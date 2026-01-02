@@ -4,7 +4,6 @@ import Diary from "../../diaryList/class/Diary.js";
 import diaryListData from "../../diaryList/data/diaryListData.js";
 // diaryListElementData 가져옴
 import diaryListElementData from "../../diaryList/data/diaryListElementData.js";
-import diaryWriteElementData from "../../diaryList/data/diaryWriteElementData.js";
 
 
 // diary 리스트 데이터 추가 함수
