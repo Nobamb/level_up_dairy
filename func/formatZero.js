@@ -15,7 +15,7 @@ const formatZero = (checkValues)=>{
       checkValue = "0" + String(checkValue);
     }
     // formatList에 추가
-    formatList.append(checkValue)
+    formatList.push(checkValue)
     
   }
   // formatList 리턴
@@ -23,3 +23,7 @@ const formatZero = (checkValues)=>{
   return formatList
 
 }
+
+
+// export 
+export default formatZero
