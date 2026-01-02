@@ -11,6 +11,17 @@ const diaryWrite = () => {
   const mainContext = document.getElementById("mainContext");
   // mainHeader 가져오기
   const mainHeader = document.getElementById("mainHeader");
+  // 일기를 작성하는 것이기에
+  // input관련(inputTitle, inputContext)은 on
+  // 제목 영역의 title 및 내용 영역의 diaryContext off
+  // inputTitle 가져오기
+  const inputTitle = document.getElementById("inputTitle");
+  // inputContext 가져오기
+  const inputContext = document.getElementById("inputContext")
+  // title 가져오기
+  const title = document.getElementById("title")
+  // diaryContext 가져오기
+  const diaryContext = document.getElementById("diaryContext")
 
   // writeDiary 클릭시 이벤트 발생
   writeDiaryButton.onclick = () => {
@@ -22,9 +33,9 @@ const diaryWrite = () => {
     mainContext.classList.add("on");
     // off 클래스 삭제
     mainContext.classList.remove("off");
+    
   };
 };
 
-
-// export 
-export default diaryWrite
+// export
+export default diaryWrite;
