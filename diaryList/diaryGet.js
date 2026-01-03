@@ -14,6 +14,7 @@ import diaryListElementData from "./data/diaryListElementData.js";
 // updateButton, deleteButton off
 const diaryGet = () => {
   // 테스트
+  // 부모요소를 클릭시
   diaryListElementData.diaryList.onclick = (e) => {
     // 이벤트 위임(closest를 통해 자식 요소 점검)
     // li인지 확인
