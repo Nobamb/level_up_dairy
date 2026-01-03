@@ -7,6 +7,8 @@ import diaryWrite from "./diaryList/diaryWrite.js";
 import diarySave from "./mainScreen/diarySave.js";
 // 일기 리스트 가져오기
 import diaryGet from "./diaryList/diaryGet.js";
+// 일기 수정
+import diaryUpdate from "./mainScreen/diaryUpdate.js";
 
 // 테스트
 // console.log("!")
@@ -75,4 +77,5 @@ diaryWrite()
 diarySave()
 // 일기리스트 클릭시 해당 리스트의 제목과 내용을 불러옴
 diaryGet()
-
+// 일기 버튼 클릭시, 해당 일기 수정하도록 변경
+diaryUpdate()
