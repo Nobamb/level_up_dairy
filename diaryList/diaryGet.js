@@ -1,11 +1,19 @@
 // 일기의 특정 리스트를 클릭하면
 // 그 리스트의 내용을 메인화면으로 불러옴
 
+// 함수 import
+// 요소들에 값 대입
 import elementsValueInsert from "../func/elementsValueInsert.js";
+// on/off 적용
 import onOff from "../func/onOff.js";
+// data들 모두 가져옴
+// mainscreen 요소 관련
 import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
+// mainheader 요소 관련
 import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderElementData.js";
+// settingbuttons 요소 관련
 import settingButtons from "../mainScreen/settingButtons/data/buttonsElementsData.js";
+// diaryListelement 가져옴
 import diaryListElementData from "./data/diaryListElementData.js";
 
 // li의 h2(제목) => title
