@@ -1,7 +1,6 @@
 // 일기의 특정 리스트를 클릭하면
 // 그 리스트의 내용을 메인화면으로 불러옴
 
-import clickOnOff from "../func/clickOnOff.js";
 import diaryListElementData from "./data/diaryListElementData.js";
 
 // li의 h2(제목) => title
@@ -15,7 +14,16 @@ import diaryListElementData from "./data/diaryListElementData.js";
 // updateButton, deleteButton off
 const diaryGet = () => {
   // 테스트
-  diaryListElementData.diaryListChild.onclick = () => {
+  diaryListElementData.diaryList.onclick = (e) => {
+    // 이벤트 위임(closest를 통해 자식 요소 점검)
+    // li인지 확인
+    const diary = e.target.closest('li');
+
+    // 자식 요소를 누른 것이 아니면
+    // 동작을 중지시킴
+    if(!diary){
+      return
+    }
 
     console.log("!!!")
 
