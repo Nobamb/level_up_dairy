@@ -1,6 +1,7 @@
 // 일기의 특정 리스트를 클릭하면
 // 그 리스트의 내용을 메인화면으로 불러옴
 
+import elementsValueInsert from "../func/elementsValueInsert.js";
 import onOff from "../func/onOff.js";
 import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
 import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderElementData.js";
@@ -68,15 +69,29 @@ const diaryGet = () => {
     // li의 h2(제목) => title
     // li의 span(날짜) => nowDate
     // li의 p(내용) => diaryContext
-		// 자식 요소들의 innerhtml을 가져옴		
+    // 자식 요소들의 innerhtml을 가져옴
     const titleText = diary.querySelector("h2").innerHTML;
     const nowDateText = diary.querySelector("span").innerHTML;
     const diaryContextText = diary.querySelector("p").innerHTML;
-		// 그 후 innerHTML을 통해 대입
+    // 그 후 innerHTML을 통해 대입
     mainHeaderElementData.title.innerHTML = titleText;
     mainHeaderElementData.nowDate.innerHTML = nowDateText;
     mainContextElementData.diaryContext.innerHTML = diaryContextText;
 
+    // elementsValueInsert를 통해 li 내부의 h2, span, p 값들 모두
+    // title, nowDate, diaryContext에 대입
+    elementsValueInsert(
+      [
+        mainHeaderElementData.title,
+        mainHeaderElementData.nowDate,
+        mainContextElementData.diaryContext,
+      ],
+      [
+        diary.querySelector("h2").innerHTML,
+        diary.querySelector("span").innerHTML,
+        diary.querySelector("p").innerHTML,
+      ]
+    );
   };
 };
 
