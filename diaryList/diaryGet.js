@@ -1,6 +1,10 @@
 // 일기의 특정 리스트를 클릭하면
 // 그 리스트의 내용을 메인화면으로 불러옴
 
+import onOff from "../func/onOff.js";
+import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
+import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderElementData.js";
+import settingButtons from "../mainScreen/settingButtons/data/buttonsElementsData.js";
 import diaryListElementData from "./data/diaryListElementData.js";
 
 // li의 h2(제목) => title
@@ -13,31 +17,68 @@ import diaryListElementData from "./data/diaryListElementData.js";
 // saveButton off
 // updateButton, deleteButton off
 const diaryGet = () => {
-  // 테스트
-  // 부모요소를 클릭시
+  // // 테스트
+  // // 부모요소를 클릭시
+  // diaryListElementData.diaryList.onclick = (e) => {
+  //   // 이벤트 위임(closest를 통해 자식 요소 점검)
+  //   // li인지 확인
+  //   const diary = e.target.closest('li');
+
+  //   // 자식 요소를 누른 것이 아니면
+  //   // 동작을 중지시킴
+  //   if(!diary){
+  //     return
+  //   }
+
+  //   console.log("!!!")
+
+  // }
+  // diarylist 요소 클릭 시
   diaryListElementData.diaryList.onclick = (e) => {
-    // 이벤트 위임(closest를 통해 자식 요소 점검)
-    // li인지 확인
-    const diary = e.target.closest('li');
+    // 하위 요소 지정(li)
+    const diary = e.target.closest("li");
 
-    // 자식 요소를 누른 것이 아니면
-    // 동작을 중지시킴
-    if(!diary){
-      return
-    }
+    // diary(li)가 아닐 시 return
+    if (!diary) return;
 
-    console.log("!!!")
+    // diary가 맞다면
 
-  }
-  // diarylist의 li 클릭 시
-  // clickOnOff(diaryListElementData.diaryListChild)
-  // mainheader, maincontext on
-  // inputTitle, inputContext off
-  // title, diaryContext on
-  // saveButton off
-  // updateButton, deleteButton off
+    // mainheader, maincontext on
+    // inputTitle, inputContext off
+    // title, diaryContext on
+    // saveButton off
+    // updateButton, deleteButton on
 
+    onOff(
+      [
+        mainHeaderElementData.mainHeader,
+        mainContextElementData.mainContext,
+        mainHeaderElementData.title,
+        mainContextElementData.diaryContext,
+        settingButtons.updateButton,
+        settingButtons.deleteButton,
+      ],
+      [
+        mainHeaderElementData.inputTitle,
+        mainContextElementData.inputContext,
+        settingButtons.saveButton,
+      ]
+    );
+
+    // li의 h2(제목) => title
+    // li의 span(날짜) => nowDate
+    // li의 p(내용) => diaryContext
+		// 자식 요소들의 innerhtml을 가져옴		
+    const titleText = diary.querySelector("h2").innerHTML;
+    const nowDateText = diary.querySelector("span").innerHTML;
+    const diaryContextText = diary.querySelector("p").innerHTML;
+		// 그 후 innerHTML을 통해 대입
+    mainHeaderElementData.title.innerHTML = titleText;
+    mainHeaderElementData.nowDate.innerHTML = nowDateText;
+    mainContextElementData.diaryContext.innerHTML = diaryContextText;
+
+  };
 };
 
 // export
-export default diaryGet
+export default diaryGet;
