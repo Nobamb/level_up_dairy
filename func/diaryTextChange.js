@@ -3,6 +3,7 @@ import diaryListElementData from "../diaryList/data/diaryListElementData.js";
 import NewDiary from "../data/newDiary.js";
 import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderElementData.js";
 import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
+import elementsValueInsert from "./elementsValueInsert.js";
 
 // diaryIndex에 해당하는 요소 및 데이터 변경
 
@@ -46,14 +47,22 @@ const diaryTextChange = () => {
     diaryListElementData.diaryList.children[NewDiary.diaryIndex];
   // h2, p변경
   // h2에 inputTitle 값 대입
-  diarySelect.querySelector("h2").innerHTML =
-    mainHeaderElementData.inputTitle.value;
-  // p에 inputContext 값 대입
-  diarySelect.querySelector("p").innerHTML =
-    mainContextElementData.inputContext.value;
+
+  elementsValueInsert(
+    [diarySelect.querySelector("h2"), diarySelect.querySelector("p")],
+    [
+      mainHeaderElementData.inputTitle.value,
+      mainContextElementData.inputContext.value,
+    ]
+  );
+
+  // diarySelect.querySelector("h2").innerHTML =
+  //   mainHeaderElementData.inputTitle.value;
+  // // p에 inputContext 값 대입
+  // diarySelect.querySelector("p").innerHTML =
+  //   mainContextElementData.inputContext.value;
 };
 
+// export
 
-// export 
-
-export default diaryTextChange
+export default diaryTextChange;
