@@ -17,6 +17,8 @@ import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderEleme
 // mainContext 관련 요소 데이터
 import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
 import settingButtons from "../mainScreen/settingButtons/data/buttonsElementsData.js";
+import NewDiary from "../data/newDiary.js";
+import diaryListData from "./data/diaryListData.js";
 
 // 일기 작성 버튼 관련 이벤트 동작 함수
 // 일기 작성 버튼을 클릭시, 오른쪽의 메인화면에
@@ -58,7 +60,7 @@ const diaryWrite = () => {
 
   // writebutton을 클릭시
   // newDiary true로 변경
-  newDiaryBooleanChange(diaryWriteElementData.writeDiaryButton,true)
+  newDiaryBooleanChange(diaryWriteElementData.writeDiaryButton, true);
   // diaryWriteElementData.writeDiaryButton.addEventListener('click',()=>{
 
   //   NewDiary.newDiary = true
@@ -143,6 +145,14 @@ const diaryWrite = () => {
   //     diaryContext.classList.add("off");
   //     diaryContext.classList.remove("on");
   //   };
+
+  // writeDiaryButton 클릭시,
+  // 0을 diaryIndex로 지정(가장 최근의 값이기에)
+  diaryWriteElementData.writeDiaryButton.addEventListener("click", () => {
+
+    NewDiary.diaryIndex = 0
+
+  });
 };
 
 // export
