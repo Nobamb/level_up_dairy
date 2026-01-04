@@ -5,6 +5,9 @@ import clickOnOff from "../func/clickOnOff.js";
 // 요소에 날짜를 띄우는 함수
 import dateShow from "../func/dateShow.js";
 
+// newDiary에 대해 true/false 적용함수
+import newDiaryBooleanChange from "../func/newDiaryBooleanChange.js";
+
 // 데이터 가져오기
 
 // diary 작성 관련 요소 데이터
@@ -14,7 +17,6 @@ import mainHeaderElementData from "../mainScreen/mainHeader/data/mainHeaderEleme
 // mainContext 관련 요소 데이터
 import mainContextElementData from "../mainScreen/mainContext/data/mainContextElementData.js";
 import settingButtons from "../mainScreen/settingButtons/data/buttonsElementsData.js";
-import NewDiary from "../data/newDiary.js";
 
 // 일기 작성 버튼 관련 이벤트 동작 함수
 // 일기 작성 버튼을 클릭시, 오른쪽의 메인화면에
@@ -56,11 +58,12 @@ const diaryWrite = () => {
 
   // writebutton을 클릭시
   // newDiary true로 변경
-  diaryWriteElementData.writeDiaryButton.addEventListener('click',()=>{
+  newDiaryBooleanChange(diaryWriteElementData.writeDiaryButton,true)
+  // diaryWriteElementData.writeDiaryButton.addEventListener('click',()=>{
 
-    NewDiary.newDiary = true
+  //   NewDiary.newDiary = true
 
-  })
+  // })
 
   // date를 요소에 띄우기
   dateShow(mainHeaderElementData.nowDate, new Date());
