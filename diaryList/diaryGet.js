@@ -3,6 +3,7 @@
 
 // 함수 import
 // 요소들에 값 대입
+import NewDiary from "../data/newDiary.js";
 import elementsValueInsert from "../func/elementsValueInsert.js";
 // on/off 적용
 import onOff from "../func/onOff.js";
@@ -100,6 +101,11 @@ const diaryGet = () => {
       // mainHeaderElementData.nowDate.innerHTML = nowDateText;
       // mainContextElementData.diaryContext.innerHTML = diaryContextText;
     );
+
+    // li가 diaryList의 몇번째 index인지를 가져옴
+    NewDiary.diaryIndex = [...diaryListElementData.diaryList.children].indexOf(diary)
+    // 테스트
+    console.log(NewDiary.diaryIndex)
   };
 };
 
