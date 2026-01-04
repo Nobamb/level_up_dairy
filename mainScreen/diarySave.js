@@ -10,6 +10,7 @@
 
 import NewDiary from "../data/newDiary.js";
 import diaryListData from "../diaryList/data/diaryListData.js";
+import diaryListElementData from "../diaryList/data/diaryListElementData.js";
 import onOff from "../func/onOff.js";
 import diaryListAppend from "./func/diaryListAppend.js";
 import mainContextElementData from "./mainContext/data/mainContextElementData.js";
@@ -57,16 +58,36 @@ const diarySave = () => {
       // diaryIndex에서 나오는 diaryList 요소의 li는
       // 맨위에서부터 쌓아올라가는 식(afterbegin이기에) 
       // maxIndex에서 diaryIndex를 빼는 식으로 index를 찾아야 됨
-      const diaryUpdateElement = diaryListData[maxIndex - NewDiary.diaryIndex];
+      const diaryUpdateData = diaryListData[maxIndex - NewDiary.diaryIndex];
 
       // 테스트
 
-      console.log(diaryListData);
-      console.log(NewDiary.diaryIndex);
+      // console.log(diaryListData);
+      // console.log(NewDiary.diaryIndex);
 
-      console.log(diaryUpdateElement);
+      // console.log(diaryUpdateElement);
 
+      // 기준은 inputContext, inputTitle부터
+      // title
+      diaryUpdateData.title = mainHeaderElementData.inputTitle.value;
+      // diaryContext
+      diaryUpdateData.context = mainContextElementData.inputContext.value;
+      
+      // 테스트
+      console.log(diaryListData)
+      
+      // diaryList의 특정 인덱스의 요소를 가져오고 수정하기
+      // children을 사용하여 특정 인덱스(diaryIndex)의 요소를 불러옴
+      // 요소 기준의 index이기에 maxIndex를 빼지 않고 그대로 가져옴
+      const diarySelect = diaryListElementData.diaryList.children[NewDiary.diaryIndex]
       // h2, p변경
+      // h2에 inputTitle 값 대입
+      diarySelect.querySelector('h2').innerHTML = mainHeaderElementData.inputTitle.value
+      // p에 inputContext 값 대입
+      diarySelect.querySelector('p').innerHTML = mainContextElementData.inputContext.value
+
+
+
     }
 
     // input으로 작성했던 title, context 출력(기능 동작 테스트)
