@@ -19,7 +19,7 @@ import settingButtons from "./settingButtons/data/buttonsElementsData.js";
 // diaryListElementData 요소
 import diaryListElementData from "../diaryList/data/diaryListElementData.js";
 import NewDiary from "../data/newDiary.js";
-
+import inputThisElementChildText from "./func/inputThisElementChildText.js";
 
 // title, diaryContext off
 const diaryUpdate = () => {
@@ -54,25 +54,43 @@ const diaryUpdate = () => {
     ]
   );
 
-
   // update버튼 클릭시
-  
-  settingButtons.updateButton.addEventListener("click",()=>{
 
+  settingButtons.updateButton.addEventListener("click", () => {
     // inputTitle, inputContext의 값을
     // diaryList의 특정 인덱스 순번의 li의 h2, p로 변경
-    mainHeaderElementData.inputTitle.value =
-      diaryListElementData.diaryList.children[NewDiary.diaryIndex].querySelector(
-        "h2"
-      ).innerHTML;
-    mainContextElementData.inputContext.value =
-      diaryListElementData.diaryList.children[NewDiary.diaryIndex].querySelector(
-        "p"
-      ).innerHTML;
 
+    // inputText의 값을
+    // diaryList라는 요소의 자식 요소중에
+    // diaryIndex 순번의
+    // h2의 값을 받음
+    inputThisElementChildText(
+      inputTitle,
+      diaryListElementData.diaryList,
+      NewDiary.diaryIndex,
+      "h2"
+    );
 
-  })
+    // inputContext의 값을
+    // diaryList라는 요소의 자식 요소중에
+    // diaryIndex 순번의
+    // p의 값을 받음
+    inputThisElementChildText(
+      inputContext,
+      diaryListElementData.diaryList,
+      NewDiary.diaryIndex,
+      "p"
+    );
 
+    // mainHeaderElementData.inputTitle.value =
+    //   diaryListElementData.diaryList.children[NewDiary.diaryIndex].querySelector(
+    //     "h2"
+    //   ).innerHTML;
+    // mainContextElementData.inputContext.value =
+    //   diaryListElementData.diaryList.children[NewDiary.diaryIndex].querySelector(
+    //     "p"
+    //   ).innerHTML;
+  });
 };
 
 // export
