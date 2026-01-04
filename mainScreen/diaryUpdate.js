@@ -16,17 +16,17 @@ import mainContextElementData from "./mainContext/data/mainContextElementData.js
 import mainHeaderElementData from "./mainHeader/data/mainHeaderElementData.js";
 // settingButtons 요소
 import settingButtons from "./settingButtons/data/buttonsElementsData.js";
-
+// diaryListElementData 요소
+import diaryListElementData from "../diaryList/data/diaryListElementData.js";
+import NewDiary from "../data/newDiary.js";
 
 
 // title, diaryContext off
 const diaryUpdate = () => {
-
-
   // 업데이트 버튼(updateButton) 클릭 시,
   // newDiary false
 
-  newDiaryBooleanChange(settingButtons.updateButton, false)
+  newDiaryBooleanChange(settingButtons.updateButton, false);
 
   // settingButtons.updateButton.addEventListener('click',()=>{
 
@@ -50,10 +50,30 @@ const diaryUpdate = () => {
       settingButtons.deleteButton,
       settingButtons.updateButton,
       mainHeaderElementData.title,
-      mainContextElementData.diaryContext
+      mainContextElementData.diaryContext,
     ]
   );
+
+
+  // update버튼 클릭시
+  
+  settingButtons.updateButton.addEventListener("click",()=>{
+
+    // inputTitle, inputContext의 값을
+    // diaryList의 특정 인덱스 순번의 li의 h2, p로 변경
+    mainHeaderElementData.inputTitle.value =
+      diaryListElementData.diaryList.children[NewDiary.diaryIndex].querySelector(
+        "h2"
+      ).innerHTML;
+    mainContextElementData.inputContext.value =
+      diaryListElementData.diaryList.children[NewDiary.diaryIndex].querySelector(
+        "p"
+      ).innerHTML;
+
+
+  })
+
 };
 
-// export 
-export default diaryUpdate
+// export
+export default diaryUpdate;
