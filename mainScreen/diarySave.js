@@ -21,7 +21,6 @@ const diarySave = () => {
   const saveButton = settingButtons.saveButton;
   // saveButton 클릭시,
   saveButton.onclick = () => {
-    
     // 제목 값
     const titleValue = mainHeaderElementData.inputTitle.value;
     // 내용 값
@@ -35,30 +34,44 @@ const diarySave = () => {
     // false일 땐 diarySave는 저장할 시 선택한 일기를 수정
 
     // newDiary가 true일 때(새로운 일기를 저장시)
-    if(NewDiary.newDiary){
+    if (NewDiary.newDiary) {
       // 일기 추가
       diaryListAppend(titleValue, contextValue, dateValue);
-
     }
     // false일 때(기존의 내용을 수정하려고 할 때)
-    else{
+    else {
       // 테스트
       // console.log('수정!')
 
-      // 
+      //diaryListData의 maxIndex가져옴
+      const maxIndex = diaryListData.length - 1;
+
       // diaryList를 가져오고,
-      // 그 리스트의 index를 찾아서 변경
-      diaryListData[diaryIndex]
+      // 그 리스트의 index를 찾아냄
+      // 찾아낸 요소를 diaryUpdateElement로 지정
+      // 가장 오래된 데이터가 0번째,
+      // 가장 최근 데이터가 마지막 index이기에
+      // dairyList는 최근의 값을 push하기 때문
+      // 반면, diaryIndex는 최근의 값이 0, 
+      // 가장 오래된 데이터는 0번째로 되어있기에
+      // diaryIndex에서 나오는 diaryList 요소의 li는
+      // 맨위에서부터 쌓아올라가는 식(afterbegin이기에) 
+      // maxIndex에서 diaryIndex를 빼는 식으로 index를 찾아야 됨
+      const diaryUpdateElement = diaryListData[maxIndex - NewDiary.diaryIndex];
 
+      // 테스트
 
+      console.log(diaryListData);
+      console.log(NewDiary.diaryIndex);
+
+      console.log(diaryUpdateElement);
+
+      // h2, p변경
     }
-
-
 
     // input으로 작성했던 title, context 출력(기능 동작 테스트)
     // console.log(mainHeaderElementData.inputTitle.value)
     // console.log(mainContextElementData.inputContext.value)
-
 
     // // 새로 저장한 일기를 리스트에 추가
     // // 제목과 내용이 각각 들어감
