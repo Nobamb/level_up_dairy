@@ -5,11 +5,19 @@
 // inputContext, inputTitle on
 // diaryContext, title off
 
-import NewDiary from "../data/newDiary.js";
+// 클릭시 on/off
 import clickOnOff from "../func/clickOnOff.js";
+// newDiary에 대해 true/false 적용함수
+import newDiaryBooleanChange from "../func/newDiaryBooleanChange.js";
+// 요소 데이터들
+// mainContextElementData 요소
 import mainContextElementData from "./mainContext/data/mainContextElementData.js";
+// mainHeaderElementData 요소
 import mainHeaderElementData from "./mainHeader/data/mainHeaderElementData.js";
+// settingButtons 요소
 import settingButtons from "./settingButtons/data/buttonsElementsData.js";
+
+
 
 // title, diaryContext off
 const diaryUpdate = () => {
@@ -17,11 +25,14 @@ const diaryUpdate = () => {
 
   // 업데이트 버튼(updateButton) 클릭 시,
   // newDiary false
-  settingButtons.updateButton.addEventListener('click',()=>{
 
-    NewDiary.newDiary = false
+  newDiaryBooleanChange(settingButtons.updateButton, false)
 
-  })
+  // settingButtons.updateButton.addEventListener('click',()=>{
+
+  //   NewDiary.newDiary = false
+
+  // })
 
   // updateButton 클릭시
   // saveButton on
