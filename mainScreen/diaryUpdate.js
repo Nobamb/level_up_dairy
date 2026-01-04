@@ -5,7 +5,7 @@
 // inputContext, inputTitle on
 // diaryContext, title off
 
-import newDiary from "../data/newDiary.js";
+import NewDiary from "../data/newDiary.js";
 import clickOnOff from "../func/clickOnOff.js";
 import mainContextElementData from "./mainContext/data/mainContextElementData.js";
 import mainHeaderElementData from "./mainHeader/data/mainHeaderElementData.js";
@@ -17,11 +17,11 @@ const diaryUpdate = () => {
 
   // 업데이트 버튼(updateButton) 클릭 시,
   // newDiary false
-  settingButtons.updateButton.onclick = () => {
+  settingButtons.updateButton.addEventListener('click',()=>{
 
-    newDiary = false
+    NewDiary.newDiary = false
 
-  }
+  })
 
   // updateButton 클릭시
   // saveButton on
