@@ -78,14 +78,7 @@ const diaryGet = () => {
     // li의 span(날짜) => nowDate
     // li의 p(내용) => diaryContext
     // 자식 요소들의 innerhtml을 가져옴
-    const titleText = diary.querySelector("h2").innerHTML;
-    const nowDateText = diary.querySelector("span").innerHTML;
-    const diaryContextText = diary.querySelector("p").innerHTML;
-    // 그 후 innerHTML을 통해 대입
-    mainHeaderElementData.title.innerHTML = titleText;
-    mainHeaderElementData.nowDate.innerHTML = nowDateText;
-    mainContextElementData.diaryContext.innerHTML = diaryContextText;
-
+    
     // elementsValueInsert를 통해 li 내부의 h2, span, p 값들 모두
     // title, nowDate, diaryContext에 대입
     elementsValueInsert(
@@ -99,6 +92,13 @@ const diaryGet = () => {
         diary.querySelector("span").innerHTML,
         diary.querySelector("p").innerHTML,
       ]
+      // const titleText = diary.querySelector("h2").innerHTML;
+      // const nowDateText = diary.querySelector("span").innerHTML;
+      // const diaryContextText = diary.querySelector("p").innerHTML;
+      // // 그 후 innerHTML을 통해 대입
+      // mainHeaderElementData.title.innerHTML = titleText;
+      // mainHeaderElementData.nowDate.innerHTML = nowDateText;
+      // mainContextElementData.diaryContext.innerHTML = diaryContextText;
     );
   };
 };
