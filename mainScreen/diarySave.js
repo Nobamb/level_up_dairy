@@ -9,6 +9,7 @@
 // updateButton, deleteButton on
 
 import NewDiary from "../data/newDiary.js";
+import diaryListData from "../diaryList/data/diaryListData.js";
 import onOff from "../func/onOff.js";
 import diaryListAppend from "./func/diaryListAppend.js";
 import mainContextElementData from "./mainContext/data/mainContextElementData.js";
@@ -42,7 +43,13 @@ const diarySave = () => {
     // false일 때(기존의 내용을 수정하려고 할 때)
     else{
       // 테스트
-      console.log('수정!')
+      // console.log('수정!')
+
+      // 
+      // diaryList를 가져오고,
+      // 그 리스트의 index를 찾아서 변경
+      diaryListData[diaryIndex]
+
 
     }
 
