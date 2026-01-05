@@ -79,3 +79,4 @@ diarySave()
 diaryGet()
 // 일기 버튼 클릭시, 해당 일기 수정하도록 변경
 diaryUpdate()
+// 버튼 클릭시, 해당 일기 삭제하도록 함
