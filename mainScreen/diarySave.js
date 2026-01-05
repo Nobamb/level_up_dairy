@@ -21,7 +21,9 @@ const diarySave = () => {
   // saveButton 가져옴
   const saveButton = settingButtons.saveButton;
   // saveButton 클릭시,
-  saveButton.onclick = () => {
+  saveButton.onclick = (e) => {
+    // form 이벤트 임시 차단
+    e.preventDefault();
     // 제목 값
     const titleValue = mainHeaderElementData.inputTitle.value;
     // 내용 값
@@ -45,7 +47,7 @@ const diarySave = () => {
       // console.log('수정!')
 
       // 일기내용 관련 수정 함수
-      diaryTextChange()
+      diaryTextChange();
 
       // //diaryListData의 maxIndex가져옴
       // const maxIndex = diaryListData.length - 1;
@@ -56,10 +58,10 @@ const diarySave = () => {
       // // 가장 오래된 데이터가 0번째,
       // // 가장 최근 데이터가 마지막 index이기에
       // // dairyList는 최근의 값을 push하기 때문
-      // // 반면, diaryIndex는 최근의 값이 0, 
+      // // 반면, diaryIndex는 최근의 값이 0,
       // // 가장 오래된 데이터는 0번째로 되어있기에
       // // diaryIndex에서 나오는 diaryList 요소의 li는
-      // // 맨위에서부터 쌓아올라가는 식(afterbegin이기에) 
+      // // 맨위에서부터 쌓아올라가는 식(afterbegin이기에)
       // // maxIndex에서 diaryIndex를 빼는 식으로 index를 찾아야 됨
       // const diaryUpdateData = diaryListData[maxIndex - NewDiary.diaryIndex];
 
@@ -75,10 +77,10 @@ const diarySave = () => {
       // diaryUpdateData.title = mainHeaderElementData.inputTitle.value;
       // // diaryContext
       // diaryUpdateData.context = mainContextElementData.inputContext.value;
-      
+
       // // 테스트
       // console.log(diaryListData)
-      
+
       // // diaryList의 특정 인덱스의 요소를 가져오고 수정하기
       // // children을 사용하여 특정 인덱스(diaryIndex)의 요소를 불러옴
       // // 요소 기준의 index이기에 maxIndex를 빼지 않고 그대로 가져옴
@@ -88,9 +90,6 @@ const diarySave = () => {
       // diarySelect.querySelector('h2').innerHTML = mainHeaderElementData.inputTitle.value
       // // p에 inputContext 값 대입
       // diarySelect.querySelector('p').innerHTML = mainContextElementData.inputContext.value
-
-
-
     }
 
     // input으로 작성했던 title, context 출력(기능 동작 테스트)
