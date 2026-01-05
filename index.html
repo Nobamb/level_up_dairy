@@ -44,14 +44,17 @@
         <!-- 일기 작성, 검색, 리스트 모음 -->
         <div id="diaryUtil">
           <!-- 일기작성버튼 -->
-          <button id="writeDiaryButton">일기 작성하기!</button>
+          <form action="">
+            <button id="writeDiaryButton">일기 작성하기!</button>
+          </form>
+
           <!-- 검색창 영역 -->
           <div id="search">
             <!-- 검색창 입력 영역 -->
-            <div id="searchBox">
+            <form id="searchBox">
               <input type="text" id="searchInput" />
               <button id="searchButton">검색</button>
-            </div>
+            </form>
           </div>
           <!-- 일기 리스트 -->
           <ul id="diaryList">
@@ -64,8 +67,8 @@
       <div id="mainScreen">
         <!-- 메인화면 하위 내용들 off 추가 -->
         <!-- 다른 일기를 띄우지 않는 이상 화면상에 보여지지 않기 위함 -->
-         <!-- 다른 일기들을 띄우게 될 시 곧바로 on -->
-         <!-- 화면에 띄우던 일기들을 보여주지 않을 시 다시 off -->
+        <!-- 다른 일기들을 띄우게 될 시 곧바로 on -->
+        <!-- 화면에 띄우던 일기들을 보여주지 않을 시 다시 off -->
         <!-- 헤더(제목) -->
         <header id="mainHeader" class="off">
           <!-- 수정 중일 땐 input이 on/ h1이 off -->
@@ -73,7 +76,9 @@
           <!-- on/off 상태에 따라 제목이 나오거나 나오지 않음 -->
           <!-- on상태일 때 등장 -->
           <!-- off상태일 땐 미등장 -->
-          <input type="text" id="inputTitle" class="off" value="제목"/>
+          <form action="">
+            <input type="text" id="inputTitle" class="off" value="제목" />
+          </form>
           <h1 id="title" class="on">제목</h1>
           <!-- 날짜 -->
           <p id="nowDate"></p>
@@ -81,11 +86,11 @@
           <!-- 수정, 삭제, 저장 -->
           <!-- 작성이 완료된 글은 수정, 삭제만 -->
           <!-- 작성중인 글은 저장만 -->
-          <div id="settingButtons">
+          <form id="settingButtons">
             <button id="saveButton" class="on">저장</button>
             <button id="updateButton" class="off">수정</button>
             <button id="deleteButton" class="off">삭제</button>
-          </div>
+          </form>
         </header>
         <!-- 메인화면 내용 -->
         <main id="mainContext" class="off">
@@ -94,7 +99,9 @@
           <!-- on/off 상태에 따라 내용이 나오거나 나오지 않음 -->
           <!-- on상태일 때 등장 -->
           <!-- off상태일 땐 미등장 -->
-          <input type="text" id="inputContext" class="off" value="내용"/>
+          <form action="">
+            <input type="text" id="inputContext" class="off" value="내용" />
+          </form>
           <p id="diaryContext" class="on">내용</p>
         </main>
       </div>
