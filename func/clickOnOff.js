@@ -9,7 +9,9 @@ import onOff from "./onOff.js";
 // 세번째 파라미터 : off클래스 추가 및 on 클래스 삭제 요소(배열)
 const clickOnOff = (button, onElements, offElements) => {
   // 버튼 클릭시,
-  button.onclick = () => {
+  button.onclick = (e) => {
+    // form 이벤트 임시 차단
+    e.preventDefault();
     // on/off 동작 실행
     onOff(onElements, offElements)
     // // onElements 모두 하나씩 가져옴
